@@ -1,0 +1,7 @@
+- authentication (user x, admin)
+- umAreaNumPrivMsgs (number of mails to specified user)
+- umAreaPrivMsgList (IDs of mails to specified user)
+- check concept
+- write daemon
+- implement squish routines
+
