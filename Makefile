@@ -49,8 +49,8 @@ distclean: clean
 	-$(RM) test$(EXE)
 
 UMAPIHDRS = umapi.h umapisq.h umapisdm.h umdate.h typesize.h
-UMAPIOBJS = umapi$(OBJ) umapisq$(OBJ) umapisdm$(OBJ) \\
-	    umdate$(OBJ) umaddr$(OBJ)
+UMAPIOBJS = umapi$(OBJ) umapisq$(OBJ) umapisdm$(OBJ) \
+            umdate$(OBJ) umaddr$(OBJ)
 UMAPICLOBJS = $(UMAPIOBJS) umapicl$(OBJ)
 UMAPISRVOBJS = $(UMAPIOBJS) umapisrv$(OBJ)
 
@@ -84,7 +84,7 @@ instdyn: $(LIBUMAPICL).so.$(UMAPIVER)
 
 else
 instdyn:
-
+	@echo
 endif
 
 install: $(LIBUMAPICL)$(LIB) instdyn
