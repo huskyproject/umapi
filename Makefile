@@ -37,16 +37,16 @@ else
 endif
 
 clean:
-	-$(RM) *.o
-	-$(RM) *~
-	-$(RM) *.bak
+	-$(RM) $(RMOPT) *.o
+	-$(RM) $(RMOPT) *~
+	-$(RM) $(RMOPT) *.bak
 
 distclean: clean
-	-$(RM) $(LIBUMAPICL).so.$(UMAPIVER)
-	-$(RM) $(LIBUMAPICL)$(LIB)
-	-$(RM) $(LIBUMAPISRV)$(LIB)
-	-$(RM) umapid$(EXE)
-	-$(RM) test$(EXE)
+	-$(RM) $(RMOPT) $(LIBUMAPICL).so.$(UMAPIVER)
+	-$(RM) $(RMOPT) $(LIBUMAPICL)$(LIB)
+	-$(RM) $(RMOPT) $(LIBUMAPISRV)$(LIB)
+	-$(RM) $(RMOPT) umapid$(EXE)
+	-$(RM) $(RMOPT) test$(EXE)
 
 UMAPIHDRS = umapi.h umapisq.h umapisdm.h umdate.h typesize.h
 UMAPIOBJS = umapi$(OBJ) umapisq$(OBJ) umapisdm$(OBJ) \
@@ -92,8 +92,8 @@ install: $(LIBUMAPICL)$(LIB) instdyn
 	$(INSTALL) $(ILOPT) $(LIBUMAPICL)$(LIB) $(LIBDIR)
 
 uninstall:
-	-$(RM) $(LIBDIR)$(DIRSEP)$(LIBUMAPICL)$(LIB)
-	-$(RM) $(LIBDIR)$(DIRSEP)$(LIBUMAPICL).so.$(UMAPIVER)
-	-$(RM) $(LIBDIR)$(DIRSEP)$(LIBUMAPICL).so.$(UMAPIVERHI)
-	-$(RM) $(LIBDIR)$(DIRSEP)$(LIBUMAPICL).so
+	-$(RM) $(RMOPT) $(LIBDIR)$(DIRSEP)$(LIBUMAPICL)$(LIB)
+	-$(RM) $(RMOPT) $(LIBDIR)$(DIRSEP)$(LIBUMAPICL).so.$(UMAPIVER)
+	-$(RM) $(RMOPT) $(LIBDIR)$(DIRSEP)$(LIBUMAPICL).so.$(UMAPIVERHI)
+	-$(RM) $(RMOPT) $(LIBDIR)$(DIRSEP)$(LIBUMAPICL).so
 
